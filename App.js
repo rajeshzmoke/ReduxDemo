@@ -7,10 +7,10 @@ import {
   View
 } from 'react-native';
 import { connect } from 'react-redux';
-import fetchPeopleFromAPI from './actions/actions';
+import { fetchPeopleFromAPI } from './actions/actions';
 
 class App extends Component {
-//  let { people, isFetching } = people;
+ let { people, isFetching } = props.people;
   render() {
     return (
       <View style={styles.container}>
@@ -68,4 +68,7 @@ function mapDispatchToProps(dispatch){
 }
 
 
-export default(mapStateToProps, mapDispatchToProps)(App)
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(App)

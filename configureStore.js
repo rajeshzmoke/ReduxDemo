@@ -1,8 +1,8 @@
 import { createStore, applyMiddleware } from 'redux';
-import app from './reducers';
+import App from './reducers';
 import thunk from 'redux-thunk';
 
 export default function configureStore(){
-  let store = createStore(app, applyMiddleware(thunk))
+  let store = createStore(App, applyMiddleware(thunk))
   return store
 }
